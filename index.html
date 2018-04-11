@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>First React App</title>
+</head>
+<body>
+  <div id="app"></div>
+
+
+
+  <script type="text/babel">
+    const name = 'Shirlette';
+    const handle = '@shirly_etta'
+
+    function NameComponent (props) {
+      return <h1>{props.name}</h1>
+    }
+
+    // *****components are function that are used to create elements
+    // ****props are information tha you pass to components
+
+    // const headerElement = React.createElement(
+    //   'h1',
+    //   { id: 'header'},
+    //   'Shirlette'
+    // );
+
+    function HandleComponent(props){
+      return <h3>{props.handle}</h3>
+    }
+
+    // const wrapperElement = React.createElement(
+    //   'div',
+    //   { id: 'container' },
+    //   React.createElement(NameComponent, {name: 'Shirlette'}),
+    //   React.createElement(HandleComponent, {handle: '@shirly_etta'})
+    // )
+
+    function App (){
+      return (
+        <div id='container'>
+          <NameComponent name={name}/>
+          <HandleComponent handle={handle} />
+        </div>
+      )
+    }
+
+
+  // console.log("wrapperElement", wrapperElement);
+
+    ReactDOM.render(
+      <App />,
+      document.getElementById('app')
+    );
+
+  </script>
+
+</body>
+</html>
